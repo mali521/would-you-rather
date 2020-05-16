@@ -37,7 +37,7 @@ class Login extends Component {
         }
         return (
             <Container>
-                <Col xs={6}>
+                <Col xs={6} md={12}>
                     <Card>
                         <Card.Header as="h5">Would You Rather App</Card.Header>
                         <Card.Body>
@@ -53,7 +53,7 @@ class Login extends Component {
                                         ))}
                                     </Form.Control>
                                 </Form.Group>
-                                <Button variant="primary" onClick={this.login}>Sign in</Button>
+                                <Button style={{backgroundColor: "brown"}} variant="primary" onClick={this.login}>Sign in</Button>
                             </Form>
                         </Card.Body>
                     </Card>

@@ -28,7 +28,7 @@ class NavigationBar extends Component {
                     <Nav>
                         <div className="navText">Hello, {loggedInUser.name}</div>
                         <Image src={loggedInUser.avatarURL} rounded />
-                        <Button variant="outline-primary" onClick={this.logout}>Logout</Button>
+                        <Button style={{backgroundColor: "brown"}} variant="outline-primary" onClick={this.logout}>Logout</Button>
                     </Nav>
                 </Navbar>
             

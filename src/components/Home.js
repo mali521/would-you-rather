@@ -26,7 +26,7 @@ class Home extends Component {
             <div>
                 <NavigationBar />
                 <Container>
-                    <Col xs={6} md={6}>
+                    <Col xs={6} md={8} lg={12}>
                         <Nav justify variant="tabs" defaultActiveKey="link-1">
                             <Nav.Item>
                                 <Nav.Link eventKey="link-1" onClick={this.handleChangeUnAnswered}>Unanswered</Nav.Link>
