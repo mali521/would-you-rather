@@ -7,7 +7,7 @@ import { handleAnswer } from '../actions/shared';
 
 class QuestionView extends Component {
     state = {
-        selectedValue : null
+        selectedValue: null
     }
     handleChange = (e) => {
         this.setState({
@@ -19,14 +19,18 @@ class QuestionView extends Component {
         this.props.dispatch(handleAnswer(this.props.authedUser, this.props.match.params.id, this.state.selectedValue))
     }
     render() {
-        if(this.props.error) {
+        if (this.props.error) {
             return (
-                <Container>
-                    <Col>
-                        <h1>404</h1>
-                        <p>The page not found</p>
-                    </Col>
-                </Container>
+                <div>
+
+                    <NavigationBar />
+                    <Container>
+                        <Col>
+                            <h1>404</h1>
+                            <p>The page not found</p>
+                        </Col>
+                    </Container>
+                </div>
             )
         }
 
@@ -88,23 +92,23 @@ class QuestionView extends Component {
                                             Would you rather
                                         </Card.Text>
                                         <Form.Group>
-                                        <div className="mb-3">
-                                            <Form.Check
-                                                type="radio"
-                                                name="select"
-                                                label={ques ? ques.optionOne.text : ''}
-                                                onChange={this.handleChange}
-                                                value="optionOne"
-                                            />
+                                            <div className="mb-3">
+                                                <Form.Check
+                                                    type="radio"
+                                                    name="select"
+                                                    label={ques ? ques.optionOne.text : ''}
+                                                    onChange={this.handleChange}
+                                                    value="optionOne"
+                                                />
 
-                                            <Form.Check
-                                                type="radio"
-                                                name="select"
-                                                label={ques ? ques.optionTwo.text : ''}
-                                                onChange={this.handleChange}
-                                                value="optionTwo"
-                                            />
-                                        </div>
+                                                <Form.Check
+                                                    type="radio"
+                                                    name="select"
+                                                    label={ques ? ques.optionTwo.text : ''}
+                                                    onChange={this.handleChange}
+                                                    value="optionTwo"
+                                                />
+                                            </div>
                                         </Form.Group>
                                         <Button variant="primary" block onClick={this.onSubmit}>Submit</Button>
                                     </Card.Body>
@@ -118,7 +122,7 @@ class QuestionView extends Component {
 }
 
 function mapStateToProps({ users, questions, authedUser }, { match }) {
-    if(questions[match.params.id] === undefined) {
+    if (questions[match.params.id] === undefined) {
         const error = true;
         return {
             error
